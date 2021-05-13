@@ -1,0 +1,48 @@
+172.20.10.6（改为当前的ip地址）
+账号：pi
+密码：raspberry
+
+Putty
+	打开树莓派控制菜单sudo raspi-config
+
+	打开VNC功能
+	1、选择5,Interfacing Options
+	2、选择P3 VNC
+
+	更改分辨率
+	1、选择Advanced Options
+	2、选择A5 Resolution
+
+数据学习网址
+https://lab.qingsteam.cn/#/user
+
+
+
+url = "https://lab.qingsteam.cn/practice-web/practice/api/characterTest?accessToken=Emdh6vUO15N2y598" #接口调用地址
+modelId = "3449cebf747c463b9a4ab8087841b1a2" #模型id
+headers = { "Content-Type": "Application/json"} #请求头
+
+CD（空格）
+
+
+pi/home/desktop		Python 0706.py 按回车
+/home/motions/		动作文件通过手机可直接分享至此文件夹
+
+
+1、打开机器人，摆放到地图上的工作区
+2、打开手机和电脑，连接同一个WiFi，打开手机软件Yanshee，让Yanshee联网，并得到ip地址
+3、在手机软件Yanshee App 内点击回读编程，编写需要用到的动作文件，动作文件需要替换的有两个，一个是弯腰观察场地的动作（目前默认动作为“kan”），另外一个是紧急任务中需要自己编写的动作（参照民用航空器地面指挥信号）
+4、通过手机把编写好的动作文件，发送至机器人上，打开电脑端的VNC软件，直接访问对应动作文件夹（motions）
+5、打开WINSCP软件，建立电脑与机器人的连接
+6、打开电脑端VNC软件，访问机器人桌面，打开photo.py程序，开始拍照
+7、1、A区域照片，拍1张背景图（无飞机），两个区域各拍50张以上的飞机图
+8、2、4区域照片，拍1张背景图（无飞机），两个区域各拍50张以上的飞机图
+9、3、B区域照片，拍1张背景图（无飞机），两个区域各拍50张以上的飞机图
+10、用WINSCP软件，从机器人上把所有拍好的照片，导出到笔记本上的文件夹内（E:\YCWLgaozhong\gao\5\test），背景图放在photo_background内，飞机照片放在photo文件夹内
+11、处理照片，打开test文件夹下的图片处理.exe程序，按一下回车显示菜单选项，输入“1”，开始截取photo文件夹下的飞机图片，按空格键切换下一张图片，鼠标框选目标进行截取
+12、打开imageclipper文件夹，E:\YCWLgaozhong\gao\5\test\photo\imageclipper，这个文件夹内就是刚才截取好的飞机图片
+13、背景图处理方法，参照test下的使用说明.doc文档
+14、打开数据学习网址（https://lab.qingsteam.cn/#/user），登录账号（13912973574）后，上传正负样本，得到请求头三行代码
+15、打开拍好的三张背景图片，依次确定1、2、3、4、A、B区域的位置。（利用画图软件，确定坐标像素点）
+16、色卡的阈值是HSV技术，三个数字分别代表的是H、S、V
+17、
